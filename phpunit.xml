@@ -20,4 +20,13 @@
             <directory>src</directory>
         </include>
     </source>
+    <coverage>
+        <report>
+            <html outputDirectory="build/coverage" />
+            <cobertura outputFile="build/logs/cobertura.xml"/>
+        </report>
+    </coverage>
+    <logging>
+        <junit outputFile="build/logs/junit.xml" />
+    </logging>
 </phpunit>
