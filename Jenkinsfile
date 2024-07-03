@@ -20,14 +20,14 @@ pipeline {
                     ]
                 ])
                 publishHTML([
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: false,
-                reportDir: 'build/coverage',
-                reportFiles: 'index.html',
-                reportName: 'Coverage Report (HTML)',
-                reportTitles: ''
-            ])
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: false,
+                    reportDir: 'build/coverage',
+                    reportFiles: 'index.html',
+                    reportName: 'Coverage Report (HTML)',
+                    reportTitles: ''
+                ])
                 discoverGitReferenceBuild()
                 recordCoverage(tools: [[parser: 'COBERTURA', pattern: 'build/logs/cobertura.xml']])
             }
