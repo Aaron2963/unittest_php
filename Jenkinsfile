@@ -1,7 +1,18 @@
 pipeline {
     agent any
 
+    environment {
+        GITHUB_TOKEN = credentials('24ee2eb0-d269-4cee-b9a8-8e0ef11b911e')
+    }
+
     stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Aaron2963/unittest_php.git',
+                credentialsId: '24ee2eb0-d269-4cee-b9a8-8e0ef11b911e'
+            }
+        }
+
         stage('Unit Tests') {
             steps {
                 sh 'vendor/bin/phpunit'
